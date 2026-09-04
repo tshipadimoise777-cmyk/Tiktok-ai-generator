@@ -7,7 +7,7 @@ st.set_page_config(page_title="Générateur vidéo IA TikTok", layout="centered"
 st.title("🎬 Générateur de Vidéos TikTok IA")
 st.subheader("Transformez vos histoires en vidéos virales")
 
-# Récupération de la clé API Gemini depuis les secrets Streamlit
+# Récupération de la clé API Gemini
 api_key = st.secrets.get("GEMINI_API_KEY")
 
 if not api_key:
@@ -61,7 +61,7 @@ else:
                     4. 🎨 PROMPTS GÉNÉRATIFS DÉTAILLÉS (pour CapCut / Midjourney)
                     """
 
-                    model = genai.GenerativeModel("gemini-1.5-flash")
+                    model = genai.GenerativeModel("gemini-pro")
                     response = model.generate_content(prompt_instructions)
 
                     st.success("Génération terminée avec succès !")
