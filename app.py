@@ -35,4 +35,3 @@ if submit_button:
         st.warning("Veuillez saisir une histoire.")
     else:
         st.success("Formulaire validé ! Traitement en cours...")
-        
