@@ -61,8 +61,8 @@ else:
                     4. 🎨 PROMPTS GÉNÉRATIFS DÉTAILLÉS (pour CapCut / Midjourney)
                     """
 
-                    # Modèle mis à jour
-                    model = genai.GenerativeModel("gemini-2.5-flash")
+                    # Modèle mis à jour selon l'indication d'erreur
+                    model = genai.GenerativeModel("gemini-3.6-flash")
                     response = model.generate_content(prompt_instructions)
 
                     st.success("Génération terminée avec succès !")
@@ -71,4 +71,3 @@ else:
 
                 except Exception as e:
                     st.error(f"Erreur lors de la génération : {e}")
-                    
