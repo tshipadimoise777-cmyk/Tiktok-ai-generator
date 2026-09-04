@@ -1,0 +1,40 @@
+import streamlit as st
+
+# Configuration de la page
+st.set_page_config(page_title="TikTok AI Video Generator", page_icon="🎬", layout="centered")
+
+st.title("🎬 Générateur de Vidéos TikTok IA")
+st.subheader("Transformez vos histoires en vidéos virales")
+
+# Formulaire principal
+with st.form("video_form"):
+    story_prompt = st.text_area(
+        "Entrez l'histoire ou le prompt de votre vidéo :",
+        placeholder="Exemple : L'histoire incroyable d'un trésor caché dans la jungle...",
+        height=150
+    )
+    
+    col1, col2 = st.columns(2)
+    with col1:
+        visual_style = st.selectbox(
+            "Style visuel des personnages :",
+            ["Photoréaliste Cinématique", "Cyberpunk", "Sombre & Mystérieux", "3D Animation", "Historique 8K"]
+        )
+    with col2:
+        voice_style = st.selectbox(
+            "Ton de la voix off :",
+            ["Grave & Mystérieux", "Énergique & Dynamique", "Narrateur Documentaire", "Sérieux & Épique"]
+        )
+        
+    language = st.selectbox("Langue de la vidéo :", ["Français", "Anglais", "Espagnol"])
+    
+    submit_button = st.form_submit_button("🚀 Générer la Structure du Script")
+
+if submit_button:
+    if not story_prompt.strip():
+        st.warning("Veuillez entrer une histoire avant de continuer.")
+    else:
+        st.success("Histoire reçue ! Passage à l'analyse et à la génération du découpage...")
+        st.write(f"**Style visuel choisi :** {visual_style}")
+        st.write(f"**Ton de voix :** {voice_style}")
+      
