@@ -61,7 +61,8 @@ else:
                     4. 🎨 PROMPTS GÉNÉRATIFS DÉTAILLÉS (pour CapCut / Midjourney)
                     """
 
-                    model = genai.GenerativeModel("gemini-pro")
+                    # Modèle mis à jour
+                    model = genai.GenerativeModel("gemini-2.5-flash")
                     response = model.generate_content(prompt_instructions)
 
                     st.success("Génération terminée avec succès !")
